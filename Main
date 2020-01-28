@@ -1,0 +1,58 @@
+import random 
+from text import *
+
+strength = input("how strong would you like your password? please indicate strong medium or weak" + "\n")
+
+#while strength not in levels.keys():
+
+password = ""
+
+def pick_weak_pass():
+  """picks a random word from a list to generate a weak password"""
+  password = ""
+  password += random.choice(weak_words)
+  print("your password is:" + "\n" + password)
+
+
+
+def pick_medium_pass():
+  """picks 7 letters with random capitalization"""
+  password = ""
+  count = 0
+  while count < 8:
+    letter = random.choice(letters)
+    if count % 2 == 0:
+      password += letter.upper()
+    else:
+      password += letter
+    
+    count += 1
+  print("your password is: " + "\n" + password)
+
+
+def pick_strong_pass():
+  """picks words and letters, random capitalization"""
+  password = ""
+  count = 0
+  while count < 16:
+    password += random.choice(weak_words)
+    count += len(password)
+    password += random.choice(numbers)
+    count += 1
+    if count % 2 == 0:
+      letters.upper()
+    count += 1
+  print("your password is: " + "\n"  + password)
+    
+
+   
+if strength == 'weak':
+  pick_weak_pass()
+
+elif strength == 'medium':
+  pick_medium_pass()
+
+elif strength == 'strong':
+   
+  pick_strong_pass()
+
