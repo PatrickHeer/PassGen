@@ -29,7 +29,7 @@ def pick_medium_pass():
     count += 1
   print("your password is: " + "\n" + password)
 
-
+# Currently allows spaces, and does not pick any numbers, fix  that. 
 def pick_strong_pass():
   """picks words and letters, random capitalization"""
   password = ""
@@ -37,10 +37,13 @@ def pick_strong_pass():
   while count < 16:
     password += random.choice(weak_words)
     count += len(password)
-    password += random.choice(numbers)
+    password += random.choice(str(numbers))
     count += 1
+    letter = random.choice(letters)
     if count % 2 == 0:
-      letters.upper()
+     password += letter.upper()
+    else:
+      password += letter
     count += 1
   print("your password is: " + "\n"  + password)
     
